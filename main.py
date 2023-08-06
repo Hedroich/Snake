@@ -18,8 +18,7 @@ pygame.display.set_caption('Snake Game by Pythonist')
 
 clock = pygame.time.Clock()
 
-snake_block = 10
-# snake_speed = 5
+snake_block = 10 #Если здесь меняю то змейка перестает есть!
 
 font_style = pygame.font.SysFont(None, 25)
 score_font = pygame.font.SysFont(None, 35)
