@@ -14,11 +14,11 @@ dis_width = 800
 dis_height = 800
 
 dis = pygame.display.set_mode((dis_width, dis_height))
-pygame.display.set_caption('Snake Game by Pythonist')
+pygame.display.set_caption('Snake')
 
 clock = pygame.time.Clock()
 
-snake_block = 10 #Если здесь меняю то змейка перестает есть!
+snake_block = 10
 
 font_style = pygame.font.SysFont(None, 25)
 score_font = pygame.font.SysFont(None, 35)
@@ -44,8 +44,8 @@ def gameLoop():
     game_over = False
     game_close = False
 
-    x1 = dis_width / 2
-    y1 = dis_height / 2
+    x1 = dis_width // 2
+    y1 = dis_height // 2
 
     x1_change = 0
     y1_change = 0
@@ -53,8 +53,10 @@ def gameLoop():
     snake_List = []
     Length_of_snake = 1
 
-    foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
-    foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
+    foodx = round(random.randrange(0, dis_width - snake_block) / 20.0) * 20.0
+    foody = round(random.randrange(0, dis_height - snake_block) / 20.0) * 10.0
+
+
 
     while not game_over:
 
@@ -112,8 +114,8 @@ def gameLoop():
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
-            foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
-            foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
+            foodx = round(random.randrange(0, dis_width - snake_block) // 20.0) * 20.0
+            foody = round(random.randrange(0, dis_height - snake_block) // 20.0) * 20.0
             Length_of_snake += 1
             snake_speed += 1
 
